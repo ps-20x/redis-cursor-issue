@@ -168,6 +168,18 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
+        'external' => [
+            'url' => env('EXTERNAL_REDIS_URL'),
+            'host' => env('EXTERNAL_REDIS_HOST', '127.0.0.1'),
+            'password' => env('EXTERNAL_REDIS_AUTH_TOKEN'),
+            'port' => env('EXTERNAL_REDIS_PORT', 6379),
+            'database' => env('EXTERNAL_REDIS_DB', 0),
+            'options' => [
+                'scheme' => 'tls',
+                'prefix' => '',
+            ],
+        ],
+
     ],
 
 ];
