@@ -30,21 +30,6 @@ services:
       - "traefik.http.routers.laravel.entrypoints=web"
       - "traefik.http.services.laravel.loadbalancer.server.port=8080"
       - "traefik.http.services.laravel.loadbalancer.server.scheme=http"
-  
-  node:
-    image: node:20
-    volumes:
-      - .:/usr/src/app/
-    working_dir: /usr/src/app/
-    networks: 
-      - development
-
-  mailpit:
-      image: axllent/mailpit
-      networks:
-        - development
-      ports:
-        - "8025:8025"
 
 networks:
   development:
